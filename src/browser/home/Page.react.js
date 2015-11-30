@@ -4,6 +4,7 @@ import Component from 'react-pure-render/component'
 import Helmet from 'react-helmet'
 import React, {PropTypes} from 'react'
 
+// @fetch(updateTime)
 export default class Page extends Component {
 
   static propTypes = {
@@ -38,7 +39,7 @@ export default class Page extends Component {
           (test image from assets)
         </p>
         <hr/>
-        <p className='styled'>
+        <p className="styled">
           a styled text
         </p>
       </div>

@@ -6,7 +6,7 @@ export const UPDATE_TIME_START = 'UPDATE_TIME_START'
 export const UPDATE_TIME_SUCCESS = 'UPDATE_TIME_SUCCESS'
 
 export function updateTime() {
-  return ({fetch})=>({
+  return ({fetch}) => ({
     type: UPDATE_TIME,
     payload: {
       promise: fetch('/api/v1/home/time')
