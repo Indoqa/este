@@ -2,7 +2,7 @@ import * as actions from './actions';
 import {Record} from 'immutable';
 
 const InitialState = Record({
-  time: null
+  time: 'not initialzed'
 });
 const initialState = new InitialState;
 
@@ -16,7 +16,6 @@ export default function homeReducer(state = initialState, action) {
     }
 
     case actions.UPDATE_TIME_SUCCESS: {
-      console.log(action.payload);
       const {time} = action.payload;
       return state.set('time', time.toString());
     }
