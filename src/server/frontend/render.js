@@ -74,9 +74,7 @@ const renderPage = (store, renderProps, req) => {
 
 export default function render(req, res, next) {
   const initialState = {
-    device: {
-      isMobile: ['phone', 'tablet'].indexOf(req.device.type) > -1
-    }
+    // empty cause we removed 'device' (only used for native rendering)
   };
   const store = configureStore({initialState});
 

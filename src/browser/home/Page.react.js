@@ -3,12 +3,10 @@ import './Page.styl';
 import Component from 'react-pure-render/component';
 import Helmet from 'react-helmet';
 import React, {PropTypes} from 'react';
-import {FormattedDate} from 'react-intl';
-import {Link} from 'react-router';
-import fetch from '../components/fetch'
+import fetch from '../components/fetch';
 import {updateTime} from '../../common/home/actions';
 
-//@fetch(updateTime)
+// @fetch(updateTime)
 export default class Page extends Component {
 
   static propTypes = {
@@ -19,20 +17,35 @@ export default class Page extends Component {
     msg: PropTypes.object
   };
 
+  componentDidMount() {
+    const {dispatch} = this.props;
+      dispatch(updateTime)
+  }
+
   render() {
     const {msg: {home: msg}, home, actions} = this.props;
     return (
       <div className="home-page">
         <Helmet title={msg.title} />
         <p>
-          Body
+          <span> Click button to fetch time from server. Every 10th call results in an error </span>
         </p>
-        {/* Note require usage for image source. Very useful for CDN. */}
-        <img alt="50x50 placeholder" src={require('./50x50.png')} />
         <p>
-          <span>{home.time}</span>
+          <button onClick={() => actions.updateTime()}>Update Time</button>
         </p>
-        <a onClick={() => actions.updateTime()}>Update Time</a>
+        <p>
+          <span>Time: {home.time}</span>
+        </p>
+        <hr/>
+        <p>
+          {/* Note require usage for image source. Very useful for CDN. */}
+          <img alt="50x50 placeholder" src={require('./50x50.png')} />
+          (test image from assets)
+        </p>
+        <hr/>
+        <p className='styled'>
+          a styled text
+        </p>
       </div>
     );
   }
