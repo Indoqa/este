@@ -35,11 +35,12 @@ export default class Page extends Component {
         </p>
         <hr/>
         <p>
-          <img alt="50x50 placeholder" src="/assets/img/50x50.png"/>
+          {/* Note require usage for image source. Very useful for CDN. */}
+          <img alt="50x50 placeholder" src={require('./50x50.png')} />
           (test image from assets)
         </p>
         <hr/>
-        <p className="styled">
+        <p className='styled'>
           a styled text
         </p>
       </div>
