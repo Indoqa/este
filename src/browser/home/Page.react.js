@@ -6,7 +6,7 @@ import React, {PropTypes} from 'react';
 import fetch from '../components/fetch';
 import {updateTime} from '../../common/home/actions';
 
-// @fetch(updateTime)
+@fetch(updateTime)
 export default class Page extends Component {
 
   static propTypes = {
@@ -16,11 +16,6 @@ export default class Page extends Component {
     home: PropTypes.object,
     msg: PropTypes.object
   };
-
-  componentDidMount() {
-    const {dispatch} = this.props;
-      dispatch(updateTime)
-  }
 
   render() {
     const {msg: {home: msg}, home, actions} = this.props;
