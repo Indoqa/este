@@ -19,12 +19,11 @@ export default class App extends Component {
   static propTypes = {
     children: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
-    msg: PropTypes.object.isRequired,
-    users: PropTypes.object.isRequired
+    msg: PropTypes.object.isRequired
   }
 
   render() {
-    const {location: {pathname}, msg, users: {viewer}} = this.props;
+    const {location: {pathname}, msg} = this.props;
 
     return (
       // Pass data-pathname to allow route specific styling.
@@ -37,7 +36,7 @@ export default class App extends Component {
           titleTemplate="%s - Este.js"
         />
         {/* Pathname enforces rerender so activeClassName is updated. */}
-        <Header msg={msg} pathname={pathname} viewer={viewer} />
+        <Header msg={msg} pathname={pathname} />
         <RouterHandler {...this.props} />
         <Footer msg={msg.app.footer} />
       </div>
