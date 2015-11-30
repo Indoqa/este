@@ -1,5 +1,4 @@
 import Validation from './lib/validation';
-import ValidationError from './lib/ValidationError';
 import {format} from './intl/format';
 
 // Localized validation.
@@ -18,5 +17,4 @@ export default function validate(state) {
   const validate = (object) => new LocalizedValidation(object);
 
   return validate;
-
 }
