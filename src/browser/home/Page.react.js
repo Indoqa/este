@@ -4,7 +4,7 @@ import Component from 'react-pure-render/component'
 import Helmet from 'react-helmet'
 import React, {PropTypes} from 'react'
 
-// @fetch(updateTime)
+@fetch(updateTime)
 export default class Page extends Component {
 
   static propTypes = {
