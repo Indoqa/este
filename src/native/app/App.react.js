@@ -53,7 +53,6 @@ class App extends Component {
     const {msg: {app: {links}}} = this.props;
     switch (route) {
       case routes.home: return links.home;
-      case routes.todos: return links.todos;
     }
   }
 
