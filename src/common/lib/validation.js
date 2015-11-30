@@ -44,34 +44,4 @@ export default class Validation {
   getRequiredMessage(prop) {
     return `Please fill out '${prop}' field.`;
   }
-
-  email() {
-    return this.custom((value, prop) => {
-      if (this._validator.isEmail(value)) return;
-      throw new ValidationError(
-        this.getEmailMessage(prop, value),
-        prop
-      );
-    });
-  }
-
-  getEmailMessage() {
-    return `Email address is not valid.`;
-  }
-
-  simplePassword() {
-    return this.custom((value, prop) => {
-      const minLength = 5;
-      if (value.length >= minLength) return;
-      throw new ValidationError(
-        this.getSimplePasswordMessage(minLength),
-        prop
-      );
-    });
-  }
-
-  getSimplePasswordMessage(minLength) {
-    return `Password must contain at least ${minLength} characters.`;
-  }
-
 }
