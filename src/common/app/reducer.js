@@ -5,11 +5,13 @@ import {combineReducers} from 'redux';
 // do that, until app is really large.
 import device from '../device/reducer';
 import intl from '../intl/reducer';
+import home from '../home/reducer';
 import ui from '../ui/reducer';
 
 const appReducer = combineReducers({
   device,
   intl,
+  home,
   ui
 });
 

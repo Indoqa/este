@@ -1,42 +1,13 @@
 export default {
   app: {
     footer: {
-      madeByHtml: 'made by <a href="https://twitter.com/steida">steida</a>'
     },
     links: {
       home: 'Home'
     }
   },
   home: {
-    // // TODO: Android text.
-    // androidInfoText: ``,
-    infoHtml: '<a href="https://github.com/este/este">Este.js</a> dev stack.',
-    iosInfoText: `Este.js dev stack.
-      Open left menu and check todos!
-      Press CMD+R to reload.
-      Press CMD+D for debug menu.
-    `,
-    title: 'Este.js',
-    toCheck: {
-      andMuchMore: 'And much more :-)',
-      h2: 'Things to Check',
-      isomorphicPage: 'Isomorphic page',
-      // This is example of localized ordered list.
-      list: [
-        {
-          key: 'source',
-          text: 'Server rendering'
-        },
-        {
-          key: 'development',
-          text: 'Hot reload for styles, components, etc.'
-        },
-        {
-          key: 'production',
-          text: 'Performance and size of production build (<code>gulp -p</code>)'
-        }
-      ]
-    }
+    title: 'Title Home',
   },
   notFound: {
     continueMessage: 'Continue here please.',

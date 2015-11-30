@@ -1,8 +1,10 @@
 import * as uiActions from '../ui/actions';
+import * as homeActions from '../home/actions';
 import {Map} from 'immutable';
 import {bindActionCreators} from 'redux';
 
 const actions = [
+  homeActions,
   uiActions
 ];
 
