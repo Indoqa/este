@@ -3,10 +3,8 @@ import './Page.styl';
 import Component from 'react-pure-render/component';
 import Helmet from 'react-helmet';
 import React, {PropTypes} from 'react';
-import fetch from '../components/fetch';
 import {updateTime} from '../../common/home/actions';
 
-@fetch(updateTime)
 export default class Page extends Component {
 
   static propTypes = {
@@ -15,6 +13,10 @@ export default class Page extends Component {
     actions: PropTypes.object,
     home: PropTypes.object,
     msg: PropTypes.object
+  }
+
+  componentDidMount() {
+    this.props.actions.updateTime()
   }
 
   render() {
