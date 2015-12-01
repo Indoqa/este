@@ -1,4 +1,5 @@
 import nconf from 'nconf';
+import commonsConfig from '../common/config';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -10,7 +11,7 @@ nconf.env('__');
 const config = {
   isProduction: isProduction,
   googleAnalyticsId: 'UA-XXXXXXX-X',
-  port: process.env.PORT || 8000,
+  port: process.env.PORT || commonsConfig.serverPort,
   webpackStylesExtensions: ['css', 'less', 'sass', 'scss', 'styl']
 };
 

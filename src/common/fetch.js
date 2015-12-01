@@ -1,7 +1,8 @@
 import isomorphicFetch from 'isomorphic-fetch';
 import URI from 'urijs';
 
-const local = 'http://localhost:8000/';
+const config = require('./config');
+const local = config.serverProtocol + '://' + config.serverHost + ':' + config.serverPort + '/';
 
 function ensureAbsoluteUrl(input) {
   if (typeof input !== 'string') return input;
