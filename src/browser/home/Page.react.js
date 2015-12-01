@@ -5,7 +5,6 @@ import Helmet from 'react-helmet';
 import React, {PropTypes} from 'react';
 import {updateTime} from '../../common/home/actions';
 
-@fetch(updateTime)
 export default class Page extends Component {
 
   static propTypes = {
@@ -15,6 +14,10 @@ export default class Page extends Component {
     home: PropTypes.object,
     msg: PropTypes.object
   };
+
+  componentDidMount() {
+    this.props.actions.updateTime()
+  }
 
   render() {
     const {msg: {home: msg}, home, actions} = this.props;
