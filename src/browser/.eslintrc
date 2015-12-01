@@ -3,7 +3,10 @@
     "browser": true
   },
   "globals": {
-    // Handled by Webpack.
     "process": true
   },
+  "rules": {
+    "semi": [2, "never"],
+    "react/jsx-boolean-value": [2, "always"]
+  }
 }

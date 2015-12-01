@@ -6,7 +6,8 @@
     "devToolsExtension": false,
     "setInterval": false,
     "setTimeout": false,
+  },
+  "rules": {
+    "semi": [2, "never"]
   }
 }
-
-

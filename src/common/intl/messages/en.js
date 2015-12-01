@@ -15,4 +15,4 @@ export default {
     message: 'The link may be broken, or the page may have been removed.',
     title: 'Page Not Found'
   }
-};
+}

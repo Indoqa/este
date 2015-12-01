@@ -22,14 +22,14 @@ export default function configureStore({deps, /* engine, */ initialState}) {
   const dependenciesMiddleware = injectDependencies(
     {...deps, fetch, getUid, now},
     {validate}
-  );
+  )
 
   const middleware = [
     dependenciesMiddleware,
     promiseMiddleware({
       promiseTypeSuffixes: ['START', 'SUCCESS', 'ERROR']
     })
-  ];
+  ]
 
   // TODO: Add redux-storage example.
   // if (engine) {
@@ -51,10 +51,11 @@ export default function configureStore({deps, /* engine, */ initialState}) {
     middleware.push(logger);
   }
 
-  const createReduxStore = (BROWSER_DEVELOPMENT && window.devToolsExtension)
-    ? compose(applyMiddleware(...middleware), window.devToolsExtension())
-    : applyMiddleware(...middleware);
-  const store = createReduxStore(createStore)(appReducer, initialState);
+  const createReduxStore = (BROWSER_DEVELOPMENT && window.devToolsExtension) // eslint-disable-line no-undef
+    ? compose(applyMiddleware(...middleware), window.devToolsExtension()) // eslint-disable-line no-undef
+    : applyMiddleware(...middleware)
+
+  const store = createReduxStore(createStore)(appReducer, initialState)
 
   // Enable hot reload where available.
   if (module.hot) {
@@ -65,5 +66,5 @@ export default function configureStore({deps, /* engine, */ initialState}) {
     });
   }
 
-  return store;
+  return store
 }

@@ -1,20 +1,20 @@
-import Validation from './lib/validation';
-import {format} from './intl/format';
+import Validation from './lib/validation'
+import {format} from './intl/format'
 
 // Localized validation.
 export default function validate(state) {
 
-  const intl = state.intl;
-  const msg = intl.messages[intl.selectedLanguage];
+  const intl = state.intl
+  const msg = intl.messages[intl.selectedLanguage]
 
   class LocalizedValidation extends Validation {
 
     getRequiredMessage(prop) {
-      return format(msg.auth.validation.required, {prop});
+      return format(msg.auth.validation.required, {prop})
     }
   }
 
-  const validate = (object) => new LocalizedValidation(object);
+  const validate = (object) => new LocalizedValidation(object)
 
-  return validate;
+  return validate
 }
