@@ -15,7 +15,7 @@ export default class Page extends Component {
   };
 
   componentDidMount() {
-    this.props.actions.updateTime()
+    this.props.actions.updateTime();
   }
 
   render() {
