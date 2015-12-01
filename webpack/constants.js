@@ -1,4 +1,5 @@
 import path from 'path';
+import commonsConfig from '../src/common/config';
 
 export const ABSOLUTE_BASE = path.normalize(path.join(__dirname, '..'));
 
@@ -10,7 +11,7 @@ const constants = Object.freeze({
   DIST_DIR: path.join(ABSOLUTE_BASE, 'dist'),
   SRC_DIR: path.join(ABSOLUTE_BASE, 'src'),
   ASSETS_DIR: path.join(ABSOLUTE_BASE, 'assets'),
-  HOT_RELOAD_PORT: process.env.HOT_RELOAD_PORT || 8080,
+  HOT_RELOAD_PORT: process.env.HOT_RELOAD_PORT || commonsConfig.hotReloadPort,
 });
 
 export const NODE_MODULES_DIR = constants.NODE_MODULES_DIR;
