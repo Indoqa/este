@@ -4,4 +4,4 @@ export default {
   serverHost: 'localhost',
   serverPort:  8002,
   hotReloadPort: 8081
-};
+}

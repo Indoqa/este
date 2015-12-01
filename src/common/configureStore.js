@@ -39,7 +39,7 @@ export default function configureStore({deps, /* engine, */ initialState}) {
     promiseMiddleware(
       {promiseTypeSuffixes: ['START', 'SUCCESS', 'ERROR']
     })
-  ];
+  ]
 
   // TODO: Add redux-storage example.
   // if (engine) {
@@ -75,5 +75,5 @@ export default function configureStore({deps, /* engine, */ initialState}) {
     });
   }
 
-  return store;
+  return store
 }

@@ -14,12 +14,14 @@ import {browserHistory} from 'react-router';
 
 // http://bluebirdjs.com/docs/why-bluebird.html
 window.Promise = Bluebird;
+// Enabling ES7 `async/await` in browser:
+if (process.env.IS_BROWSER) require('regenerator/runtime')
 
-const app = document.getElementById('app');
-const engine = createEngine('este-app');
-const initialState = window.__INITIAL_STATE__;
-const store = configureStore({engine, initialState});
-const routes = createRoutes(store.getState);
+const app = document.getElementById('app')
+const engine = createEngine('este-app')
+const initialState = window.__INITIAL_STATE__
+const store = configureStore({engine, initialState})
+const routes = createRoutes(store.getState)
 
 ReactDOM.render(
   <Provider store={store}>
@@ -34,4 +36,4 @@ ReactDOM.render(
     // This is where state from local storage should be retrieved.
     // storage.createLoader(engine)(store);
   }
-);
+)

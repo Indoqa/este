@@ -1,7 +1,7 @@
-import Component from 'react-pure-render/component';
-import Helmet from 'react-helmet';
-import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
+import Component from 'react-pure-render/component'
+import Helmet from 'react-helmet'
+import React, {PropTypes} from 'react'
+import {Link} from 'react-router'
 
 export default class NotFound extends Component {
 
@@ -10,7 +10,7 @@ export default class NotFound extends Component {
   };
 
   render() {
-    const {msg: {notFound: msg}} = this.props;
+    const {msg: {notFound: msg}} = this.props
 
     return (
       <div className="notfound-page">
@@ -19,7 +19,7 @@ export default class NotFound extends Component {
         <p>{msg.message}</p>
         <Link to="/">{msg.continueMessage}</Link>
       </div>
-    );
+    )
   }
 
 }

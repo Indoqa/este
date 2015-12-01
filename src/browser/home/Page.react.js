@@ -1,8 +1,8 @@
-import './Page.styl';
+import './Page.styl'
 
-import Component from 'react-pure-render/component';
-import Helmet from 'react-helmet';
-import React, {PropTypes} from 'react';
+import Component from 'react-pure-render/component'
+import Helmet from 'react-helmet'
+import React, {PropTypes} from 'react'
 
 export default class Page extends Component {
 
@@ -15,11 +15,11 @@ export default class Page extends Component {
   };
 
   componentDidMount() {
-    this.props.actions.updateTime();
+    this.props.actions.updateTime()
   }
 
   render() {
-    const {msg: {home: msg}, home, actions} = this.props;
+    const {msg: {home: msg}, home, actions} = this.props
     return (
       <div className="home-page">
         <Helmet title={msg.title} />
@@ -42,7 +42,7 @@ export default class Page extends Component {
           a styled text
         </p>
       </div>
-    );
+    )
   }
 
 }
