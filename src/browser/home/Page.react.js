@@ -3,7 +3,6 @@ import './Page.styl';
 import Component from 'react-pure-render/component';
 import Helmet from 'react-helmet';
 import React, {PropTypes} from 'react';
-import {updateTime} from '../../common/home/actions';
 
 export default class Page extends Component {
 
@@ -16,7 +15,7 @@ export default class Page extends Component {
   };
 
   componentDidMount() {
-    this.props.actions.updateTime()
+    this.props.actions.updateTime();
   }
 
   render() {

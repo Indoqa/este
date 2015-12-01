@@ -6,12 +6,13 @@ let calls = 0;
 
 router.route('/time')
   .get((req, res, next) => {
-    calls++;  
+    calls++;
     setTimeout(() => {
-      if(calls % 10 != 0){
+      if (calls % 10 !== 0) {
         const time = new Date();
         res.status(200).send({time: time}).end();
-      }else{
+      }
+      else {
         res.status(500).send({errorMessage : 'Happens every second time.'});
       }
     }, 200);
