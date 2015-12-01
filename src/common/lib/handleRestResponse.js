@@ -1,6 +1,7 @@
 export default (response) => {
   if (response.ok) {
-    return response.json()
+    return response.json();
   }
-  throw response
-}
+  throw response;
+};
+
