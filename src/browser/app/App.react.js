@@ -1,13 +1,13 @@
-import './App.styl';
-import Component from 'react-pure-render/component';
-import Footer from './Footer.react';
-import Header from './Header.react';
-import Helmet from 'react-helmet';
-import React, {PropTypes} from 'react';
-import RouterHandler from '../../common/components/RouterHandler.react';
-import mapDispatchToProps from '../../common/app/mapDispatchToProps';
-import mapStateToProps from '../../common/app/mapStateToProps';
-import {connect} from 'react-redux';
+import './App.styl'
+import Component from 'react-pure-render/component'
+import Footer from './Footer.react'
+import Header from './Header.react'
+import Helmet from 'react-helmet'
+import React, {PropTypes} from 'react'
+import RouterHandler from '../../common/components/RouterHandler.react'
+import mapDispatchToProps from '../../common/app/mapDispatchToProps'
+import mapStateToProps from '../../common/app/mapStateToProps'
+import {connect} from 'react-redux'
 
 // // logRenderTime is useful for app with huge UI to check render performance.
 // import logRenderTime from '../lib/logRenderTime';
@@ -23,7 +23,7 @@ export default class App extends Component {
   }
 
   render() {
-    const {location: {pathname}, msg} = this.props;
+    const {location: {pathname}, msg} = this.props
 
     return (
       // Pass data-pathname to allow route specific styling.
@@ -40,7 +40,7 @@ export default class App extends Component {
         <RouterHandler {...this.props} />
         <Footer msg={msg.app.footer} />
       </div>
-    );
+    )
   }
 
 }

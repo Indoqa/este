@@ -1,5 +1,5 @@
-import Component from 'react-pure-render/component';
-import React, {PropTypes} from 'react';
+import Component from 'react-pure-render/component'
+import React, {PropTypes} from 'react'
 
 export default class Footer extends Component {
 
@@ -14,7 +14,6 @@ export default class Footer extends Component {
           Footer
         </p>
       </footer>
-    );
+    )
   }
-
 }
