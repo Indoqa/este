@@ -17,7 +17,7 @@ export default function configureStore({deps, /* engine, */ initialState}) {
   // 'http://localhost:8000' for mobile device or '' for browser/server
   // platforms (e.g. treat as relative URL to current page).
   const webAddr = process.env.WEB_ADDR ||
-    (initialState.device.isMobile ? 'http://localhost:8000' : '');
+    (initialState.device ? 'http://localhost:8000' : '');
 
   // Este dependency injection middleware. So simple that we don't need a lib.
   // It's like mixed redux-thunk and redux-inject.
