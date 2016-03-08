@@ -47,4 +47,4 @@ class App extends Component {
 // import logRenderTime from '../lib/logRenderTime';
 // App = logRenderTime(App)
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -1,19 +1,19 @@
-import Bluebird from 'bluebird';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Router} from 'react-router';
-import configureStore from '../common/configureStore';
-import createEngine from 'redux-storage/engines/localStorage';
-import createRoutes from './createRoutes';
-import {IntlProvider} from 'react-intl';
-import {Provider} from 'react-redux';
-import {browserHistory} from 'react-router';
+import Bluebird from 'bluebird'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {Router} from 'react-router'
+import configureStore from '../common/configureStore'
+import createEngine from 'redux-storage/engines/localStorage'
+import createRoutes from './createRoutes'
+import {IntlProvider} from 'react-intl'
+import {Provider} from 'react-redux'
+import {browserHistory} from 'react-router'
 
 // TODO: Add app storage example.
 // import storage from 'redux-storage';
 
 // http://bluebirdjs.com/docs/why-bluebird.html
-window.Promise = Bluebird;
+window.Promise = Bluebird
 // Enabling ES7 `async/await` in browser:
 if (process.env.IS_BROWSER) require('regenerator/runtime')
 

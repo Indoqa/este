@@ -27,7 +27,7 @@ export default class Page extends Component {
           <span> Click button to fetch time from server. Every 10th call results in an error </span>
         </p>
         <p>
-          <button onClick={() => actions.updateTime()}>Update Time</button>
+          <button onClick={actions.updateTime}>Update Time</button>
         </p>
         <p>
           <span>Time: {home.time}</span>
@@ -39,7 +39,7 @@ export default class Page extends Component {
           (test image from assets)
         </p>
         <hr/>
-        <p className='styled'>
+        <p className={'styled'}>
           a styled text
         </p>
       </div>
