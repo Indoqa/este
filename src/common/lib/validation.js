@@ -1,4 +1,3 @@
-// Simple serial sync/async chriso/validator.js wrapper with promises.
 import Promise from 'bluebird'
 import ValidationError from './ValidationError'
 import validator from 'validator'

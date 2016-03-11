@@ -13,6 +13,5 @@ const revive = state => initialState
 
 export default function intlReducer(state = initialState) {
   if (!(state instanceof InitialState)) return revive(state)
-
   return state
 }

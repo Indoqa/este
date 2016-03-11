@@ -9,12 +9,7 @@ import {IntlProvider} from 'react-intl'
 import {Provider} from 'react-redux'
 import {browserHistory} from 'react-router'
 
-// TODO: Add app storage example.
-// import storage from 'redux-storage';
-
-// http://bluebirdjs.com/docs/why-bluebird.html
 window.Promise = Bluebird
-// Enabling ES7 `async/await` in browser:
 if (process.env.IS_BROWSER) require('regenerator/runtime')
 
 const app = document.getElementById('app')
@@ -31,9 +26,5 @@ ReactDOM.render(
       </Router>
     </IntlProvider>
   </Provider>,
-  app,
-  () => {
-    // This is where state from local storage should be retrieved.
-    // storage.createLoader(engine)(store);
-  }
+  app
 )

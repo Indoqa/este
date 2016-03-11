@@ -12,7 +12,7 @@ router.route('/time')
         const time = new Date();
         res.status(200).send({time: time}).end();
       } else {
-        res.status(500).send({errorMessage: 'Happens every second time.'});
+        res.status(500).send({errorMessage: 'Happens every 10th time.'});
       }
     }, 200);
 

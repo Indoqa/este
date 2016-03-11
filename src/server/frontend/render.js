@@ -35,10 +35,6 @@ const getAppHtml = (store, renderProps) => {
 };
 
 const getScriptHtml = (state, headers, hostname, appJsFilename) => {
-  // Note how app state is serialized. JSON.stringify is anti-pattern.
-  // https://github.com/yahoo/serialize-javascript#user-content-automatic-escaping-of-html-characters
-  // Note how we use cdn.polyfill.io, en is default, but can be changed later.
-  // This approach is great for server-less apps.
   return `
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.en"></script>
     <script>
@@ -77,10 +73,6 @@ export default function render(req, res, next) {
     // empty cause we removed 'device' (only used for native rendering)
   };
   const store = configureStore({initialState});
-
-  // Fetch logged in user here because routes may need it. Remember we can use
-  // store.dispatch method.
-
   const routes = createRoutes(() => store.getState());
   const location = createMemoryHistory().createLocation(req.url);
 
@@ -99,8 +91,6 @@ export default function render(req, res, next) {
     try {
       await fetchComponentDataAsync(store.dispatch, renderProps);
       const html = renderPage(store, renderProps, req);
-      // renderProps are always defined with * route.
-      // https://github.com/rackt/react-router/blob/master/docs/guides/advanced/ServerRendering.md
       const status = renderProps.routes.some(route => route.path === '*')
         ? 404
         : 200;

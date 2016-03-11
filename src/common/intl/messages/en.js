@@ -3,11 +3,11 @@ export default {
     footer: {
     },
     links: {
-      home: 'Home'
+      home: 'Indoqa React dev stack sample'
     }
   },
   home: {
-    title: 'Title Home',
+    title: 'Indoqa React dev stack sample',
   },
   notFound: {
     continueMessage: 'Continue here please.',

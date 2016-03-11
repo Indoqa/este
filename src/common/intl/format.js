@@ -1,7 +1,6 @@
 import IntlMessageFormat from 'intl-messageformat'
 import IntlRelativeFormat from 'intl-relativeformat'
 
-// TODO: Memoize all.
 const cachedFormatters = Object.create(null)
 const intlRelativeFormat = new IntlRelativeFormat
 

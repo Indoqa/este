@@ -8,8 +8,6 @@ function ensureAbsoluteUrl(webAddr, input) {
 }
 
 export default function createFetch(webAddr) {
-  // Wrapper over isomorphicFetch making relative urls absolute. We don't want
-  // hardcode fetch urls since they are different when app is deployed or not.
   return function fetch(input, init) {
     input = ensureAbsoluteUrl(webAddr, input)
     return isomorphicFetch(input, init)

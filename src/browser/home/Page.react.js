@@ -7,8 +7,6 @@ import React, {PropTypes} from 'react'
 export default class Page extends Component {
 
   static propTypes = {
-    // Why not PropTypes.object.isRequired? Because:
-    // https://github.com/rackt/react-router/issues/1505
     actions: PropTypes.object,
     home: PropTypes.object,
     msg: PropTypes.object
@@ -34,7 +32,6 @@ export default class Page extends Component {
         </p>
         <hr/>
         <p>
-          {/* Note require usage for image source. Very useful for CDN. */}
           <img alt="50x50 placeholder" src={require('./50x50.png')} />
           (test image from assets)
         </p>

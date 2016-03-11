@@ -1,7 +1,6 @@
 import Validation from './lib/validation'
 import {format} from './intl/format'
 
-// Localized validation.
 export default function validate(state) {
 
   const intl = state.intl

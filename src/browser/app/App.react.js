@@ -21,7 +21,6 @@ class App extends Component {
     const {location: {pathname}, msg} = this.props
 
     return (
-      // Pass data-pathname to allow route specific styling.
       <div className="page" data-pathname={pathname}>
         <Helmet
           link={[
@@ -33,7 +32,6 @@ class App extends Component {
           }]}
           titleTemplate="%s"
         />
-        {/* Pathname enforces rerender so activeClassName is updated. */}
         <Header msg={msg} pathname={pathname} />
         <RouterHandler {...this.props} />
         <Footer msg={msg.app.footer} />
@@ -43,7 +41,7 @@ class App extends Component {
 
 }
 
-// // logRenderTime is useful for app with huge UI to check render performance.
+// logRenderTime is useful for app with huge UI to check render performance.
 // import logRenderTime from '../lib/logRenderTime';
 // App = logRenderTime(App)
 

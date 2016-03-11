@@ -10,17 +10,10 @@ const BROWSER_DEVELOPMENT =
   process.env.NODE_ENV !== 'production' &&
   process.env.IS_BROWSER
 
-// TODO: Add example for browser/native redux-storage.
-// import storage from 'redux-storage'
 export default function configureStore({deps, /* engine, */ initialState}) {
-  // Server address is passed in environment var WEB_ADDR defaulted to
-  // 'http://localhost:8000' for mobile device or '' for browser/server
-  // platforms (e.g. treat as relative URL to current page).
   const webAddr = process.env.WEB_ADDR ||
     (initialState.device ? 'http://localhost:8000' : '')
 
-  // Este dependency injection middleware. So simple that we don't need a lib.
-  // It's like mixed redux-thunk and redux-inject.
   const injectMiddleware = deps => store => next => action => {
     return next(typeof action === 'function'
       ? action({...deps, store})
@@ -41,16 +34,6 @@ export default function configureStore({deps, /* engine, */ initialState}) {
     })
   ]
 
-  // TODO: Add redux-storage example.
-  // if (engine) {
-  //   // The order of decorators is important.
-  //   engine = storage.decorators.filter(engine, [
-  //     ['todos']
-  //   ])
-  //   engine = storage.decorators.debounce(engine, 1500)
-  //   middleware.push(storage.createMiddleware(engine))
-  // }
-
   if (BROWSER_DEVELOPMENT) {
     const logger = createLogger({
       collapsed: true,
@@ -67,9 +50,7 @@ export default function configureStore({deps, /* engine, */ initialState}) {
 
   const store = createReduxStore(createStore)(appReducer, initialState)
 
-  // Enable hot reload where available.
   if (module.hot) {
-    // Enable Webpack hot module replacement for reducers.
     module.hot.accept('./app/reducer', () => {
       const nextAppReducer = require('./app/reducer')
       store.replaceReducer(nextAppReducer)

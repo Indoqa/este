@@ -1,4 +1,3 @@
-
 export default {
   serverProtocol: 'http',
   serverHost: 'localhost',
