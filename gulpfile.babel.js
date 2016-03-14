@@ -127,7 +127,7 @@ gulp.task('to-html', done => {
     const proc = require('child_process').spawn('node', ['./src/server']);
     proc.stderr.on('data', (data) => console.log(data.toString()));
     proc.stdout.on('data', async data => {
-      data = data.toString();
+      data = data.toString(); // eslint-disable-line no-param-reassign
       if (data.indexOf('Server started') === -1) return;
       try {
         moveAssets();
