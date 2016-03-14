@@ -10,9 +10,9 @@ router.route('/time')
     setTimeout(() => {
       if (calls % 10 !== 0) {
         const time = new Date();
-        res.status(200).send({time: time}).end();
+        res.status(200).send({time}).end();
       } else {
-        res.status(500).send({errorMessage: 'Happens every second time.'});
+        res.status(500).send({errorMessage: 'Happens every 10th time.'});
       }
     }, 200);
 

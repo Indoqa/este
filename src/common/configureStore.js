@@ -21,7 +21,7 @@ export default function configureStore({deps, /* engine, */ initialState}) {
 
   // Este dependency injection middleware. So simple that we don't need a lib.
   // It's like mixed redux-thunk and redux-inject.
-  const injectMiddleware = deps => store => next => action => {
+  const injectMiddleware = deps => store => next => action => { // eslint-disable-line no-shadow,max-len
     return next(typeof action === 'function'
       ? action({...deps, store})
       : action

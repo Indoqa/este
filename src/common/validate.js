@@ -14,7 +14,5 @@ export default function validate(state) {
     }
   }
 
-  const validate = (object) => new LocalizedValidation(object)
-
-  return validate
+  return (object) => new LocalizedValidation(object)
 }
