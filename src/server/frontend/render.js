@@ -61,7 +61,7 @@ const renderPage = (store, renderProps, req) => {
   if (!config.isProduction) {
     webpackIsomorphicTools.refresh();
   }
-  return '<!DOCTYPE html>' + ReactDOMServer.renderToStaticMarkup(
+  return '<!DOCTYPE html>' + ReactDOMServer.renderToStaticMarkup( // eslint-disable-line prefer-template,max-len
     <Html
       appCssFilename={appCssFilename}
       bodyHtml={`<div id="app">${appHtml}</div>${scriptHtml}`}

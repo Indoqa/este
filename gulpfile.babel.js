@@ -99,7 +99,7 @@ gulp.task('to-html', done => {
       // Explicitly treat incoming data as utf8 (avoids issues with multi-byte).
       res.setEncoding('utf8');
       let body = '';
-      res.on('data', data => body += data);
+      res.on('data', data => body += data); // eslint-disable-line no-return-assign
       res.on('end', () => resolve(body));
     }).on('error', reject);
   });

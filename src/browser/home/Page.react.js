@@ -32,13 +32,13 @@ export default class Page extends Component {
         <p>
           <span>Time: {home.time}</span>
         </p>
-        <hr/>
+        <hr />
         <p>
           {/* Note require usage for image source. Very useful for CDN. */}
           <img alt="50x50 placeholder" src={require('./50x50.png')} />
           (test image from assets)
         </p>
-        <hr/>
+        <hr />
         <p className={'styled'}>
           a styled text
         </p>

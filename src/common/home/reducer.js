@@ -21,10 +21,12 @@ export default function homeReducer(state = initialState, action) {
     }
 
     case actions.UPDATE_TIME_ERROR: {
-      return state.set('time', 'Error fetching time: ' + action.payload.statusText)
+      return state.set('time', `Error fetching time: ${action.payload.statusText}`)
     }
 
+    default: {
+      return state
+    }
   }
 
-  return state
 }
