@@ -75,10 +75,11 @@ gulp.task('server-nodemon', shell.task(
 ));
 
 gulp.task('server', ['env'], done => {
-  if (args.production)
+  if (args.production) {
     runSequence('clean', 'build', 'server-node', done);
-  else
+  } else {
     runSequence('server-hot', 'server-nodemon', done);
+  }
 });
 
 // Default task to start development. Just type gulp.
